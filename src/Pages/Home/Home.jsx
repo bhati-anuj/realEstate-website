@@ -18,7 +18,7 @@ const Home = () => {
   const loginAuth = useSelector((state) => {
     return state.loginUsers[0].status;
   })
-  console.log(loginAuth);
+
   
   if(loginAuth === false){
     navigate("/")
