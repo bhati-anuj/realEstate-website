@@ -34,41 +34,62 @@ const Signin = () => {
   return (
     <>
       <div className={style.signinContainer}>
-        <Form className={style.signinForm}>
-          <h1 style={{ margin: "25px", marginBottom: "50px" }}>Sign in</h1>
+        <div className={style.sideImage}>
+          <h1>Dikha-Dunga</h1>
+          <p>You Dream it..We will find it</p>
+        </div>
+        <div className={style.formDiv}>
+          <Form className={style.signinForm}>
+            <h1 style={{ fontWeight: "800" }}>Welcome!</h1>
+            <FormGroup className={style.formGroup}>
+              <div>
+                <Button
+                  className=" btn-lg me-1 mb-4 "
+                  style={{ backgroundColor: "#d9c6ab", borderColor: "white" }}
+                >
+                  <Link
+                    to={"/signup"}
+                    style={{ textDecoration: "none", color: "black" }}
+                  >
+                    Sign up{" "}
+                  </Link>
+                </Button>
 
-          <FormGroup
-            style={{
-              padding: "10px",
-              paddingTop: "35px",
-              margin: "10px",
-              width: "50%",
-              height: "30%",
-            }}
-          >
-            <Form.Label>Email:</Form.Label>
-            <Form.Control
-              required
-              type="email"
-              ref={userEmailRef}
-              placeholder="Enter your email "
-            />
+                <Button
+                  className="mb-4 btn-lg  me-1"
+                  style={{ backgroundColor: "white", borderColor: "#d9c6ab" }}
+                >
+                  {" "}
+                  <Link
+                    to={"/"}
+                    style={{ textDecoration: "none", color: "black" }}
+                  >
+                    Sign in{" "}
+                  </Link>
+                </Button>
+              </div>
 
-            <Form.Label>Password:</Form.Label>
-            <Form.Control
-              required
-              type="password"
-              ref={userPasswordRef}
-              placeholder="Enter your password"
-            />
-          </FormGroup>
-          <Button variant="secondary" onClick={handleSubmit}>
-            Log in
-          </Button>
-          <br />
-          <a>Don't have an account? </a>
-          <Link to={"/Signup"}>Sign up</Link>
-        </Form>
+              <Form.Control
+                style={{ height: "50px", margin: "15px" }}
+                required
+                type="email"
+                ref={userEmailRef}
+                placeholder="Enter your email "
+              />
+
+              <Form.Control
+                style={{ height: "50px", margin: "15px" }}
+                required
+                type="password"
+                ref={userPasswordRef}
+                placeholder="Enter your password"
+              />
+            </FormGroup>
+            <Button variant="secondary" onClick={handleSubmit}>
+              Log in
+            </Button>
+          </Form>
+        </div>
       </div>
     </>
   );
